@@ -630,6 +630,32 @@
       setMode("signup");
     }
 
+    // Save the signed-in user's basic details in public.profiles.
+    // Row Level Security ensures each user can write only their own row.
+    async function saveProfile(user) {
+      if (!user?.id) return;
+
+      const fullName =
+        user.user_metadata?.full_name ||
+        user.user_metadata?.name ||
+        user.email ||
+        "Learner";
+
+      const { error } = await supabaseClient
+        .from("profiles")
+        .upsert(
+          {
+            id: user.id,
+            full_name: fullName,
+            email: user.email || null,
+            updated_at: new Date().toISOString()
+          },
+          { onConflict: "id" }
+        );
+
+      if (error) throw error;
+    }
+
     authForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (busy) return;
@@ -677,8 +703,9 @@
           if (error) throw error;
 
           if (data.session) {
+            await saveProfile(data.user);
             showSignedIn(data.user);
-            showMessage("Account created and signed in successfully.");
+            showMessage("Account created, signed in, and profile saved successfully.");
           } else {
             showMessage(
               "Account created. Please check your email and click the confirmation link. After confirmation, return to this website and log in."
@@ -690,8 +717,9 @@
 
           if (error) throw error;
 
+          await saveProfile(data.user);
           showSignedIn(data.user);
-          showMessage("Login successful.");
+          showMessage("Login successful. Your profile has been saved.");
         }
       } catch (error) {
         // Avoid displaying technical internals to the user.
@@ -739,7 +767,18 @@
         const { data, error } = await supabaseClient.auth.getSession();
         if (error) throw error;
 
-        if (data.session?.user) showSignedIn(data.session.user);
+        if (data.session?.user) {
+          showSignedIn(data.session.user);
+          try {
+            await saveProfile(data.session.user);
+          } catch (profileError) {
+            showMessage(
+              "You are signed in, but your profile could not be saved. " +
+              (profileError?.message || "Please try again."),
+              true
+            );
+          }
+        }
       } catch (error) {
         showMessage("Could not check your login session. Please refresh the page.", true);
       }
