@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07152f">
+  <meta name="description" content="NOVYRA SKILLS — learn practical skills with AI, from beginner to professional.">
+  <title>NOVYRA SKILLS — Powered by NOVYRA VYREN</title>
+  <style>
+    :root{color-scheme:dark;--navy:#07152f;--navy2:#0b2045;--gold:#e6c778;--gold2:#b9913d;--muted:#b8c4d9;--line:rgba(230,199,120,.22)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f7f5ef;background:radial-gradient(ellipse at 80% 0%,#183461 0%,transparent 42%),radial-gradient(ellipse at 0% 55%,#10274b 0%,transparent 40%),var(--navy);min-height:100vh}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line);gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .crest{width:44px;height:44px;border:1px solid var(--gold);border-radius:14px;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:25px;background:linear-gradient(145deg,rgba(230,199,120,.14),rgba(230,199,120,.02))}
+    .brand strong{display:block;letter-spacing:2px;font-size:14px}
+    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.3px;margin-top:4px}
+    nav{display:flex;gap:24px;color:var(--muted);font-size:13px}
+    nav a:hover{color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:650;font-size:13px;border:1px solid var(--line);cursor:pointer;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,#f1d995,#c9a24e);color:#09152b;border:0}
+    .btn-quiet{color:#f8f4e8;background:rgba(255,255,255,.035)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:86px 0 72px}
+    .eyebrow{color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+    h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(42px,6vw,70px);line-height:1.05;letter-spacing:-1.8px;margin:18px 0}
+    h1 em{color:var(--gold);font-style:normal}
+    .lead{max-width:590px;color:var(--muted);font-size:17px;line-height:1.8}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .micro{color:#91a2bf;font-size:12px;margin-top:18px}
+    .showcase{position:relative;min-height:390px;border:1px solid var(--line);border-radius:24px;padding:28px;background:linear-gradient(150deg,rgba(22,48,87,.92),rgba(5,16,36,.88));box-shadow:0 30px 80px #0005;overflow:hidden}
+    .showcase:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:1px solid rgba(230,199,120,.17);right:-70px;top:-75px;box-shadow:0 0 0 24px rgba(230,199,120,.025),0 0 0 52px rgba(230,199,120,.02)}
+    .panel-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;letter-spacing:1.5px}
+    .live{color:#b9e8c8;border:1px solid #4d9270;border-radius:30px;padding:6px 10px;letter-spacing:.5px}
+    .orb{width:126px;height:126px;margin:36px auto 28px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);background:radial-gradient(circle at 35% 25%,#49618a,#14294b 50%,#071329 78%);box-shadow:0 0 60px #d6b35b1c,inset 0 0 25px #e6c77820;color:var(--gold);font:54px Georgia,serif}
+    .showcase h2{text-align:center;font:26px Georgia,serif;margin:0 0 9px}
+    .showcase p{text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
+    .stat{padding:13px 8px;text-align:center;background:#ffffff07;border:1px solid #ffffff0c;border-radius:12px}
+    .stat b{display:block;color:var(--gold);font-size:16px}.stat span{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+    section{padding:44px 0 74px}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 32px}
+    .section-head h2{font:clamp(30px,4vw,42px) Georgia,serif;margin:12px 0}
+    .section-head p{color:var(--muted);line-height:1.7}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .course{padding:24px;border-radius:17px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff08,#ffffff02);min-height:185px;transition:border-color .2s,transform .2s}
+    .course:hover{border-color:#e6c77880;transform:translateY(-3px)}
+    .course-icon{font-size:25px;margin-bottom:18px}
+    .course h3{font-size:17px;margin:0 0 9px}
+    .course p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
+    .course small{display:inline-block;color:var(--gold);margin-top:15px;font-size:11px}
+    .banner{border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;background:linear-gradient(110deg,#152e52,#0a1934)}
+    .banner h2{font:27px Georgia,serif;margin:0 0 8px}.banner p{color:var(--muted);margin:0;font-size:13px;line-height:1.6}
+    footer{border-top:1px solid var(--line);padding:25px 0 35px;color:#91a2bf;font-size:11px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;gap:32px;padding:56px 0}.showcase{min-height:350px}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.wrap{width:min(100% - 28px,1160px)}header{padding:17px 0}.brand strong{font-size:12px}.brand small{font-size:9px}.hero{padding:44px 0}.lead{font-size:15px}.grid{grid-template-columns:1fr}.banner{align-items:flex-start;flex-direction:column}.stats{gap:7px}.stat span{font-size:9px}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="#" aria-label="NOVYRA SKILLS home">
+      <span class="crest" aria-hidden="true">N</span>
+      <span><strong>NOVYRA SKILLS</strong><small>POWERED BY NOVYRA VYREN</small></span>
+    </a>
+    <nav aria-label="Main navigation"><a href="#explore">Explore skills</a><a href="#how">Our approach</a></nav>
+    <a class="btn btn-quiet" href="#explore">Explore learning ↗</a>
+  </header>
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Your next chapter starts here</div>
+        <h1>Learn a skill.<br><em>Shape your future.</em></h1>
+        <p class="lead">A new kind of learning space for curious minds. Build real-world skills from the ground up, explore new fields, and grow at your own pace—with AI-powered learning designed to support your journey.</p>
+        <div class="actions"><a class="btn btn-gold" href="#explore">Discover skills <span aria-hidden="true">→</span></a><a class="btn btn-quiet" href="#how">How it works</a></div>
+        <p class="micro">For beginners, students, career changers, and lifelong learners.</p>
+      </div>
+      <aside class="showcase" aria-label="Learning platform preview">
+        <div class="panel-top"><span>THE LEARNING STUDIO</span><span class="live">● YOUR JOURNEY</span></div>
+        <div class="orb" aria-hidden="true">✦</div>
+        <h2>Knowledge, made personal.</h2>
+        <p>Start with curiosity. Learn through practice.<br>Keep building, one step at a time.</p>
+        <div class="stats"><div class="stat"><b>Learn</b><span>At your pace</span></div><div class="stat"><b>Practice</b><span>Real projects</span></div><div class="stat"><b>Grow</b><span>Every day</span></div></div>
+      </aside>
+    </div>
+    <section class="wrap" id="explore">
+      <div class="section-head"><div class="eyebrow">Explore your potential</div><h2>Where will curiosity take you?</h2><p>Discover learning pathways across technology, creativity, business, and practical skills. This is the first preview; course content and account features will be added step by step.</p></div>
+      <div class="grid">
+        <article class="course"><div class="course-icon" aria-hidden="true">⌘</div><h3>AI & Technology</h3><p>Explore artificial intelligence, coding, digital tools, and the technologies shaping tomorrow.</p><small>Think · Build · Innovate</small></article>
+        <article class="course"><div class="course-icon" aria-hidden="true">✧</div><h3>Creative Skills</h3><p>Develop your creative voice through design, art, music, storytelling, and content creation.</p><small>Imagine · Create · Share</small></article>
+        <article class="course"><div class="course-icon" aria-hidden="true">◈</div><h3>Business & Finance</h3><p>Build foundations in entrepreneurship, financial literacy, marketing, and business operations.</p><small>Plan · Understand · Lead</small></article>
+        <article class="course"><div class="course-icon" aria-hidden="true">⚙</div><h3>Vocational & Technical</h3><p>Discover practical trades, hands-on techniques, and skills for real-world work.</p><small>Learn · Practice · Apply</small></article>
+        <article class="course"><div class="course-icon" aria-hidden="true">⌬</div><h3>Science & Agriculture</h3><p>Explore scientific thinking, experiments, sustainability, and modern agricultural ideas.</p><small>Question · Explore · Discover</small></article>
+        <article class="course"><div class="course-icon" aria-hidden="true">◎</div><h3>Communication & Growth</h3><p>Strengthen communication, languages, critical thinking, and personal development.</p><small>Connect · Reflect · Improve</small></article>
+      </div>
+    </section>
+    <section class="wrap" id="how">
+      <div class="banner"><div><h2>Start where you are.</h2><p>No matter your background, your learning journey can begin with one small step.</p></div><a class="btn btn-gold" href="#explore">Explore pathways →</a></div>
+    </section>
+  </main>
+  <footer class="wrap"><span>© <span id="year"></span> NOVYRA SKILLS</span><span>Powered by NOVYRA VYREN · Learn with purpose.</span></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
