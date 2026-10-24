@@ -1,118 +1,757 @@
-done<!doctype html>
+
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#07152f">
-  <meta name="description" content="NOVYRA SKILLS — learn practical skills with AI, from beginner to professional.">
+  <meta name="description" content="NOVYRA SKILLS — learn practical skills with AI.">
   <title>NOVYRA SKILLS — Powered by NOVYRA VYREN</title>
+
   <style>
-    :root{color-scheme:dark;--navy:#07152f;--navy2:#0b2045;--gold:#e6c778;--gold2:#b9913d;--muted:#b8c4d9;--line:rgba(230,199,120,.22)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f7f5ef;background:radial-gradient(ellipse at 80% 0%,#183461 0%,transparent 42%),radial-gradient(ellipse at 0% 55%,#10274b 0%,transparent 40%),var(--navy);min-height:100vh}
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
-    header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line);gap:20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .crest{width:44px;height:44px;border:1px solid var(--gold);border-radius:14px;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:25px;background:linear-gradient(145deg,rgba(230,199,120,.14),rgba(230,199,120,.02))}
-    .brand strong{display:block;letter-spacing:2px;font-size:14px}
-    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.3px;margin-top:4px}
-    nav{display:flex;gap:24px;color:var(--muted);font-size:13px}
-    nav a:hover{color:var(--gold)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:650;font-size:13px;border:1px solid var(--line);cursor:pointer;transition:transform .2s,background .2s}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-gold{background:linear-gradient(135deg,#f1d995,#c9a24e);color:#09152b;border:0}
-    .btn-quiet{color:#f8f4e8;background:rgba(255,255,255,.035)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:86px 0 72px}
-    .eyebrow{color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
-    h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(42px,6vw,70px);line-height:1.05;letter-spacing:-1.8px;margin:18px 0}
-    h1 em{color:var(--gold);font-style:normal}
-    .lead{max-width:590px;color:var(--muted);font-size:17px;line-height:1.8}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .micro{color:#91a2bf;font-size:12px;margin-top:18px}
-    .showcase{position:relative;min-height:390px;border:1px solid var(--line);border-radius:24px;padding:28px;background:linear-gradient(150deg,rgba(22,48,87,.92),rgba(5,16,36,.88));box-shadow:0 30px 80px #0005;overflow:hidden}
-    .showcase:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:1px solid rgba(230,199,120,.17);right:-70px;top:-75px;box-shadow:0 0 0 24px rgba(230,199,120,.025),0 0 0 52px rgba(230,199,120,.02)}
-    .panel-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;letter-spacing:1.5px}
-    .live{color:#b9e8c8;border:1px solid #4d9270;border-radius:30px;padding:6px 10px;letter-spacing:.5px}
-    .orb{width:126px;height:126px;margin:36px auto 28px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);background:radial-gradient(circle at 35% 25%,#49618a,#14294b 50%,#071329 78%);box-shadow:0 0 60px #d6b35b1c,inset 0 0 25px #e6c77820;color:var(--gold);font:54px Georgia,serif}
-    .showcase h2{text-align:center;font:26px Georgia,serif;margin:0 0 9px}
-    .showcase p{text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
-    .stat{padding:13px 8px;text-align:center;background:#ffffff07;border:1px solid #ffffff0c;border-radius:12px}
-    .stat b{display:block;color:var(--gold);font-size:16px}.stat span{display:block;color:var(--muted);font-size:10px;margin-top:5px}
-    section{padding:44px 0 74px}
-    .section-head{text-align:center;max-width:650px;margin:0 auto 32px}
-    .section-head h2{font:clamp(30px,4vw,42px) Georgia,serif;margin:12px 0}
-    .section-head p{color:var(--muted);line-height:1.7}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .course{padding:24px;border-radius:17px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff08,#ffffff02);min-height:185px;transition:border-color .2s,transform .2s}
-    .course:hover{border-color:#e6c77880;transform:translateY(-3px)}
-    .course-icon{font-size:25px;margin-bottom:18px}
-    .course h3{font-size:17px;margin:0 0 9px}
-    .course p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
-    .course small{display:inline-block;color:var(--gold);margin-top:15px;font-size:11px}
-    .banner{border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;background:linear-gradient(110deg,#152e52,#0a1934)}
-    .banner h2{font:27px Georgia,serif;margin:0 0 8px}.banner p{color:var(--muted);margin:0;font-size:13px;line-height:1.6}
-    footer{border-top:1px solid var(--line);padding:25px 0 35px;color:#91a2bf;font-size:11px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-    @media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;gap:32px;padding:56px 0}.showcase{min-height:350px}.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:520px){.wrap{width:min(100% - 28px,1160px)}header{padding:17px 0}.brand strong{font-size:12px}.brand small{font-size:9px}.hero{padding:44px 0}.lead{font-size:15px}.grid{grid-template-columns:1fr}.banner{align-items:flex-start;flex-direction:column}.stats{gap:7px}.stat span{font-size:9px}}
+    :root {
+      color-scheme: dark;
+      --navy: #07152f;
+      --navy2: #0b2045;
+      --gold: #e6c778;
+      --gold2: #b9913d;
+      --muted: #b8c4d9;
+      --line: rgba(230,199,120,.22);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #f7f5ef;
+      background:
+        radial-gradient(ellipse at 80% 0%, #183461 0%, transparent 42%),
+        radial-gradient(ellipse at 0% 55%, #10274b 0%, transparent 40%),
+        var(--navy);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      gap: 20px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+
+    .crest {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font: 25px Georgia, serif;
+      background: linear-gradient(145deg, #e6c77824, #e6c77805);
+    }
+
+    .brand strong {
+      display: block;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.3px;
+      margin-top: 4px;
+    }
+
+    nav { display: flex; gap: 24px; color: var(--muted); font-size: 13px; }
+    nav a:hover { color: var(--gold); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 650;
+      font-size: 13px;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: transform .2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #f1d995, #c9a24e);
+      color: #09152b;
+      border: 0;
+    }
+
+    .btn-quiet { color: #f8f4e8; background: #ffffff09; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 56px;
+      align-items: center;
+      padding: 72px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      font: 500 clamp(42px, 6vw, 70px)/1.05 Georgia, serif;
+      letter-spacing: -1.8px;
+      margin: 18px 0;
+    }
+
+    h1 em { color: var(--gold); font-style: normal; }
+
+    .lead {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .micro { color: #91a2bf; font-size: 12px; margin-top: 18px; }
+
+    .showcase {
+      min-height: 350px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      background: linear-gradient(150deg, #163057eb, #051024e0);
+      box-shadow: 0 30px 80px #0005;
+    }
+
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    .orb {
+      width: 126px;
+      height: 126px;
+      margin: 36px auto 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      background: radial-gradient(circle at 35% 25%, #49618a, #14294b 50%, #071329 78%);
+      box-shadow: 0 0 60px #d6b35b1c;
+      color: var(--gold);
+      font: 54px Georgia, serif;
+    }
+
+    .showcase h2 { text-align: center; font: 26px Georgia, serif; }
+    .showcase p { text-align: center; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    section { padding: 44px 0 74px; }
+
+    .section-head { text-align: center; max-width: 650px; margin: 0 auto 32px; }
+    .section-head h2 { font: clamp(30px, 4vw, 42px) Georgia, serif; margin: 12px 0; }
+    .section-head p { color: var(--muted); line-height: 1.7; }
+
+    /* Authentication panel */
+    .auth-section { padding-top: 18px; }
+
+    .auth-card {
+      width: min(100%, 490px);
+      margin: auto;
+      padding: 30px;
+      border: 1px solid var(--gold2);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #10264aee, #071329f5);
+      box-shadow: 0 24px 70px #0004;
+    }
+
+    .auth-card h2 {
+      font: 32px Georgia, serif;
+      text-align: center;
+      margin: 12px 0;
+    }
+
+    .auth-intro {
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .auth-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .auth-tab {
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 12px 8px;
+      color: var(--muted);
+      background: #ffffff05;
+      cursor: pointer;
+    }
+
+    .auth-tab.active {
+      background: #e6c778;
+      color: #07152f;
+      font-weight: 700;
+    }
+
+    .field { margin-bottom: 17px; }
+
+    .field label {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 650;
+      margin-bottom: 8px;
+    }
+
+    .field input {
+      display: block;
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 9px;
+      border: 1px solid #52627b;
+      background: #07152f;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .field input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px #e6c77820;
+    }
+
+    .submit-btn { width: 100%; margin-top: 7px; font-size: 14px; }
+
+    .auth-message {
+      display: none;
+      padding: 12px;
+      margin-top: 17px;
+      border-radius: 9px;
+      background: #ffffff0a;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    .auth-message.visible { display: block; }
+
+    .auth-message a { color: var(--gold); text-decoration: underline; }
+
+    .auth-note {
+      text-align: center;
+      color: #91a2bf;
+      font-size: 11px;
+      line-height: 1.6;
+      margin-top: 17px;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .course {
+      padding: 24px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, #ffffff08, #ffffff02);
+      min-height: 185px;
+    }
+
+    .course-icon { font-size: 25px; margin-bottom: 18px; }
+    .course h3 { font-size: 17px; margin: 0 0 9px; }
+    .course p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .course small { display: inline-block; color: var(--gold); margin-top: 15px; font-size: 11px; }
+
+    .banner {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      background: linear-gradient(110deg, #152e52, #0a1934);
+    }
+
+    .banner h2 { font: 27px Georgia, serif; margin: 0 0 8px; }
+    .banner p { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.6; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0 35px;
+      color: #91a2bf;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media(max-width:800px) {
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media(max-width:520px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      header { padding: 17px 0; }
+      .brand strong { font-size: 12px; }
+      .brand small { font-size: 9px; }
+      .lead { font-size: 15px; }
+      .grid { grid-template-columns: 1fr; }
+      .banner { align-items: flex-start; flex-direction: column; }
+      .auth-card { padding: 22px 18px; }
+    }
   </style>
 </head>
+
 <body>
   <header class="wrap">
     <a class="brand" href="#" aria-label="NOVYRA SKILLS home">
       <span class="crest" aria-hidden="true">N</span>
-      <span><strong>NOVYRA SKILLS</strong><small>POWERED BY NOVYRA VYREN</small></span>
+      <span>
+        <strong>NOVYRA SKILLS</strong>
+        <small>POWERED BY NOVYRA VYREN</small>
+      </span>
     </a>
-    <nav aria-label="Main navigation"><a href="#explore">Explore skills</a><a href="#how">Our approach</a></nav>
-    <a class="btn btn-quiet" href="#explore">Explore learning ↗</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#explore">Explore skills</a>
+      <a href="#how">Our approach</a>
+      <a href="#account">Account</a>
+    </nav>
+
+    <a class="btn btn-quiet" href="#account">Sign in / Login</a>
   </header>
+
   <main>
     <div class="wrap hero">
       <div>
         <div class="eyebrow">Your next chapter starts here</div>
         <h1>Learn a skill.<br><em>Shape your future.</em></h1>
-        <p class="lead">A new kind of learning space for curious minds. Build real-world skills from the ground up, explore new fields, and grow at your own pace—with AI-powered learning designed to support your journey.</p>
-        <div class="actions"><a class="btn btn-gold" href="#explore">Discover skills <span aria-hidden="true">→</span></a><a class="btn btn-quiet" href="#how">How it works</a></div>
+        <p class="lead">
+          A new kind of learning space for curious minds. Build real-world
+          skills from the ground up, explore new fields, and grow at your
+          own pace—with AI-powered learning designed to support your journey.
+        </p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#explore">Discover skills →</a>
+          <a class="btn btn-quiet" href="#how">How it works</a>
+        </div>
         <p class="micro">For beginners, students, career changers, and lifelong learners.</p>
       </div>
+
       <aside class="showcase" aria-label="Learning platform preview">
-        <div class="panel-top"><span>THE LEARNING STUDIO</span><span class="live">● YOUR JOURNEY</span></div>
+        <div class="panel-top">
+          <span>THE LEARNING STUDIO</span>
+          <span>✦ YOUR JOURNEY</span>
+        </div>
         <div class="orb" aria-hidden="true">✦</div>
         <h2>Knowledge, made personal.</h2>
         <p>Start with curiosity. Learn through practice.<br>Keep building, one step at a time.</p>
-        <div class="stats"><div class="stat"><b>Learn</b><span>At your pace</span></div><div class="stat"><b>Practice</b><span>Real projects</span></div><div class="stat"><b>Grow</b><span>Every day</span></div></div>
       </aside>
     </div>
-    <section class="wrap" id="explore">
-      <div class="section-head"><div class="eyebrow">Explore your potential</div><h2>Where will curiosity take you?</h2><p>Discover learning pathways across technology, creativity, business, and practical skills. This is the first preview; course content and account features will be added step by step.</p></div>
-      <div class="grid">
-        <article class="course"><div class="course-icon" aria-hidden="true">⌘</div><h3>AI & Technology</h3><p>Explore artificial intelligence, coding, digital tools, and the technologies shaping tomorrow.</p><small>Think · Build · Innovate</small></article>
-        <article class="course"><div class="course-icon" aria-hidden="true">✧</div><h3>Creative Skills</h3><p>Develop your creative voice through design, art, music, storytelling, and content creation.</p><small>Imagine · Create · Share</small></article>
-        <article class="course"><div class="course-icon" aria-hidden="true">◈</div><h3>Business & Finance</h3><p>Build foundations in entrepreneurship, financial literacy, marketing, and business operations.</p><small>Plan · Understand · Lead</small></article>
-        <article class="course"><div class="course-icon" aria-hidden="true">⚙</div><h3>Vocational & Technical</h3><p>Discover practical trades, hands-on techniques, and skills for real-world work.</p><small>Learn · Practice · Apply</small></article>
-        <article class="course"><div class="course-icon" aria-hidden="true">⌬</div><h3>Science & Agriculture</h3><p>Explore scientific thinking, experiments, sustainability, and modern agricultural ideas.</p><small>Question · Explore · Discover</small></article>
-        <article class="course"><div class="course-icon" aria-hidden="true">◎</div><h3>Communication & Growth</h3><p>Strengthen communication, languages, critical thinking, and personal development.</p><small>Connect · Reflect · Improve</small></article>
+
+    <!-- Account form appears on the homepage -->
+    <section class="wrap auth-section" id="account">
+      <div class="auth-card">
+        <div class="eyebrow" style="text-align:center">Your learning journey</div>
+        <h2 id="auth-heading">Create your account</h2>
+        <p class="auth-intro" id="auth-intro">
+          Join NOVYRA SKILLS and start learning at your own pace.
+        </p>
+
+        <div id="auth-forms">
+          <div class="auth-tabs" role="group" aria-label="Account action">
+            <button class="auth-tab active" id="signup-tab" type="button">
+              Create Account
+            </button>
+            <button class="auth-tab" id="login-tab" type="button">
+              Login
+            </button>
+          </div>
+
+          <form id="auth-form">
+            <div class="field" id="name-field">
+              <label for="full-name">Full name</label>
+              <input
+                id="full-name"
+                name="fullName"
+                type="text"
+                autocomplete="name"
+                placeholder="Enter your full name"
+                minlength="2"
+                maxlength="100"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                maxlength="254"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="At least 8 characters"
+                minlength="8"
+                required
+              >
+            </div>
+
+            <button class="btn btn-gold submit-btn" id="submit-btn" type="submit">
+              Create Account
+            </button>
+          </form>
+
+          <p class="auth-note">
+            New accounts require email confirmation. Never share your password
+            with anyone.
+          </p>
+        </div>
+
+        <div id="signed-in-panel" hidden>
+          <p class="auth-intro" id="signed-in-text"></p>
+          <button class="btn btn-quiet submit-btn" id="logout-btn" type="button">
+            Logout
+          </button>
+        </div>
+
+        <div class="auth-message" id="auth-message" role="status" aria-live="polite"></div>
       </div>
     </section>
+
+    <section class="wrap" id="explore">
+      <div class="section-head">
+        <div class="eyebrow">Explore your potential</div>
+        <h2>Where will curiosity take you?</h2>
+        <p>
+          Discover learning pathways across technology, creativity, business,
+          and practical skills. Course content will be added step by step.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="course">
+          <div class="course-icon">⌘</div>
+          <h3>AI & Technology</h3>
+          <p>Explore artificial intelligence, coding, digital tools, and emerging technology.</p>
+          <small>Think · Build · Innovate</small>
+        </article>
+
+        <article class="course">
+          <div class="course-icon">✧</div>
+          <h3>Creative Skills</h3>
+          <p>Develop your creative voice through design, art, music, and storytelling.</p>
+          <small>Imagine · Create · Share</small>
+        </article>
+
+        <article class="course">
+          <div class="course-icon">◈</div>
+          <h3>Business & Finance</h3>
+          <p>Build foundations in entrepreneurship, financial literacy, and marketing.</p>
+          <small>Plan · Understand · Lead</small>
+        </article>
+
+        <article class="course">
+          <div class="course-icon">⚙</div>
+          <h3>Vocational & Technical</h3>
+          <p>Discover practical trades and skills for real-world work.</p>
+          <small>Learn · Practice · Apply</small>
+        </article>
+
+        <article class="course">
+          <div class="course-icon">⌬</div>
+          <h3>Science & Agriculture</h3>
+          <p>Explore scientific thinking, experiments, sustainability, and agriculture.</p>
+          <small>Question · Explore · Discover</small>
+        </article>
+
+        <article class="course">
+          <div class="course-icon">◎</div>
+          <h3>Communication & Growth</h3>
+          <p>Strengthen communication, languages, critical thinking, and personal development.</p>
+          <small>Connect · Reflect · Improve</small>
+        </article>
+      </div>
+    </section>
+
     <section class="wrap" id="how">
-      <div class="banner"><div><h2>Start where you are.</h2><p>No matter your background, your learning journey can begin with one small step.</p></div><a class="btn btn-gold" href="#explore">Explore pathways →</a></div>
+      <div class="banner">
+        <div>
+          <h2>Start where you are.</h2>
+          <p>No matter your background, your learning journey can begin with one small step.</p>
+        </div>
+        <a class="btn btn-gold" href="#account">Create your account →</a>
+      </div>
     </section>
   </main>
-  <footer class="wrap"><span>© <span id="year"></span> NOVYRA SKILLS</span><span>Powered by NOVYRA VYREN · Learn with purpose.</span></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  const SUPABASE_URL = "https://ymbnryzkgtdpyutdwvxz.supabase.co";
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_9kHsFMFrPZXDKakHlTiZlw_6yUua311";
 
-  const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
-</script>
+  <footer class="wrap">
+    <span>© <span id="year"></span> NOVYRA SKILLS</span>
+    <span>Powered by NOVYRA VYREN · Learn with purpose.</span>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const SUPABASE_URL = "https://ymbnryzkgtdpyutdwvxz.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_9kHsFMFrPZXDKakHlTiZlw_6yUua311";
+
+    // This is a browser-safe publishable key, not a service-role secret.
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+    const authForm = document.getElementById("auth-form");
+    const nameField = document.getElementById("name-field");
+    const fullNameInput = document.getElementById("full-name");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const submitButton = document.getElementById("submit-btn");
+    const signupTab = document.getElementById("signup-tab");
+    const loginTab = document.getElementById("login-tab");
+    const heading = document.getElementById("auth-heading");
+    const intro = document.getElementById("auth-intro");
+    const messageBox = document.getElementById("auth-message");
+    const formsPanel = document.getElementById("auth-forms");
+    const signedInPanel = document.getElementById("signed-in-panel");
+    const signedInText = document.getElementById("signed-in-text");
+    const logoutButton = document.getElementById("logout-btn");
+
+    let authMode = "signup";
+    let busy = false;
+
+    function showMessage(message, isError = false) {
+      messageBox.textContent = message;
+      messageBox.style.borderColor = isError ? "#e58b8b" : "var(--gold2)";
+      messageBox.style.color = isError ? "#ffc4c4" : "var(--muted)";
+      messageBox.classList.add("visible");
+    }
+
+    function clearMessage() {
+      messageBox.textContent = "";
+      messageBox.classList.remove("visible");
+    }
+
+    function setMode(mode) {
+      authMode = mode;
+      clearMessage();
+
+      const isSignup = mode === "signup";
+      nameField.hidden = !isSignup;
+      fullNameInput.required = isSignup;
+      passwordInput.autocomplete = isSignup ? "new-password" : "current-password";
+
+      signupTab.classList.toggle("active", isSignup);
+      loginTab.classList.toggle("active", !isSignup);
+
+      heading.textContent = isSignup ? "Create your account" : "Welcome back";
+      intro.textContent = isSignup
+        ? "Join NOVYRA SKILLS and start learning at your own pace."
+        : "Log in to continue your learning journey.";
+
+      submitButton.textContent = isSignup ? "Create Account" : "Login";
+    }
+
+    signupTab.addEventListener("click", () => setMode("signup"));
+    loginTab.addEventListener("click", () => setMode("login"));
+
+    function showSignedIn(user) {
+      formsPanel.hidden = true;
+      signedInPanel.hidden = false;
+
+      const metadataName = user.user_metadata?.full_name;
+      const displayName = metadataName || user.email || "Learner";
+
+      heading.textContent = "You're signed in";
+      intro.textContent = "Welcome to NOVYRA SKILLS.";
+      signedInText.textContent =
+        "Welcome, " + displayName + "! Your account is signed in.";
+    }
+
+    function showSignedOut() {
+      formsPanel.hidden = false;
+      signedInPanel.hidden = true;
+      setMode("signup");
+    }
+
+    authForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (busy) return;
+
+      clearMessage();
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+      const fullName = fullNameInput.value.trim();
+
+      if (!email || !password) {
+        showMessage("Please enter your email and password.", true);
+        return;
+      }
+
+      if (authMode === "signup" && fullName.length < 2) {
+        showMessage("Please enter your full name (at least 2 characters).", true);
+        return;
+      }
+
+      if (password.length < 8) {
+        showMessage("Your password must contain at least 8 characters.", true);
+        return;
+      }
+
+      busy = true;
+      submitButton.disabled = true;
+      submitButton.textContent = "Please wait…";
+
+      try {
+        if (authMode === "signup") {
+          const emailRedirectTo = window.location.origin + window.location.pathname;
+
+          const { data, error } = await supabaseClient.auth.signUp({
+            email,
+            password,
+            options: {
+              data: {
+                full_name: fullName
+              },
+              emailRedirectTo
+            }
+          });
+
+          if (error) throw error;
+
+          if (data.session) {
+            showSignedIn(data.user);
+            showMessage("Account created and signed in successfully.");
+          } else {
+            showMessage(
+              "Account created. Please check your email and click the confirmation link. After confirmation, return to this website and log in."
+            );
+          }
+        } else {
+          const { data, error } =
+            await supabaseClient.auth.signInWithPassword({ email, password });
+
+          if (error) throw error;
+
+          showSignedIn(data.user);
+          showMessage("Login successful.");
+        }
+      } catch (error) {
+        // Avoid displaying technical internals to the user.
+        let message = error?.message || "Something went wrong. Please try again.";
+
+        if (/invalid login credentials/i.test(message)) {
+          message = "Email or password is incorrect. If you are a new user, create an account first.";
+        } else if (/email not confirmed/i.test(message)) {
+          message = "Please confirm your email first. Open the confirmation email from Supabase.";
+        } else if (/already registered/i.test(message)) {
+          message = "This email may already have an account. Try the Login tab.";
+        } else if (/rate limit|too many requests/i.test(message)) {
+          message = "Too many attempts. Please wait a while before trying again.";
+        }
+
+        showMessage(message, true);
+      } finally {
+        busy = false;
+        submitButton.disabled = false;
+        submitButton.textContent =
+          authMode === "signup" ? "Create Account" : "Login";
+      }
+    });
+
+    logoutButton.addEventListener("click", async () => {
+      logoutButton.disabled = true;
+      clearMessage();
+
+      try {
+        const { error } = await supabaseClient.auth.signOut();
+        if (error) throw error;
+
+        showSignedOut();
+        showMessage("You have been logged out.");
+      } catch (error) {
+        showMessage(error?.message || "Logout failed. Please try again.", true);
+      } finally {
+        logoutButton.disabled = false;
+      }
+    });
+
+    // Restore an existing session and keep the page in sync with auth changes.
+    (async () => {
+      try {
+        const { data, error } = await supabaseClient.auth.getSession();
+        if (error) throw error;
+
+        if (data.session?.user) showSignedIn(data.session.user);
+      } catch (error) {
+        showMessage("Could not check your login session. Please refresh the page.", true);
+      }
+    })();
+
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN" && session?.user) {
+        showSignedIn(session.user);
+      } else if (event === "SIGNED_OUT") {
+        showSignedOut();
+      }
+    });
+  </script>
 </body>
 </html>
