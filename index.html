@@ -1,4 +1,4 @@
-<!doctype html>
+done<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -102,5 +102,17 @@
   </main>
   <footer class="wrap"><span>© <span id="year"></span> NOVYRA SKILLS</span><span>Powered by NOVYRA VYREN · Learn with purpose.</span></footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://ymbnryzkgtdpyutdwvxz.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_9kHsFMFrPZXDKakHlTiZlw_6yUua311";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+</script>
+
 </body>
 </html>
