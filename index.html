@@ -3,45 +3,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07152f">
   <title>NOVYRA SKILLS — Powered by NOVYRA VYREN</title>
 
   <style>
     :root {
       --navy: #07152f;
-      --navy2: #10264a;
+      --navy-light: #10264a;
       --gold: #e6c778;
-      --gold2: #b9913d;
+      --gold-dark: #b9913d;
       --muted: #b8c4d9;
       --line: rgba(230,199,120,.25);
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: Arial, sans-serif;
       color: #f7f5ef;
       background:
         radial-gradient(ellipse at 80% 0%, #183461, transparent 42%),
         var(--navy);
+      min-height: 100vh;
     }
 
-    a { color: inherit; }
-    button, input { font: inherit; }
+    a { color: inherit; text-decoration: none; }
 
     .wrap {
-      width: min(1100px, calc(100% - 32px));
+      width: min(1120px, calc(100% - 32px));
       margin: auto;
     }
 
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 18px;
       padding: 22px 0;
       border-bottom: 1px solid var(--line);
     }
@@ -50,16 +51,15 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      text-decoration: none;
     }
 
     .crest {
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
-      width: 45px;
-      height: 45px;
       border: 1px solid var(--gold);
-      border-radius: 13px;
+      border-radius: 12px;
       color: var(--gold);
       font: 28px Georgia, serif;
     }
@@ -71,40 +71,40 @@
 
     .brand small {
       display: block;
-      margin-top: 5px;
       color: var(--muted);
       font-size: 10px;
       letter-spacing: 1px;
+      margin-top: 5px;
     }
 
-    nav { display: flex; gap: 20px; }
-    nav a { color: var(--muted); text-decoration: none; font-size: 13px; }
+    nav { display: flex; gap: 22px; }
+    nav a { color: var(--muted); font-size: 13px; }
 
     .btn {
       display: inline-block;
-      padding: 12px 17px;
-      border: 1px solid var(--line);
+      padding: 12px 18px;
       border-radius: 9px;
+      border: 1px solid var(--line);
       cursor: pointer;
-      text-decoration: none;
       text-align: center;
+      font-size: 13px;
+      font-weight: bold;
     }
 
     .gold {
       background: linear-gradient(135deg, #f1d995, #c9a24e);
       color: #09152b;
       border: 0;
-      font-weight: bold;
     }
 
-    .quiet { background: #ffffff08; color: white; }
+    .quiet { background: #ffffff09; color: white; }
 
     .hero {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 40px;
       align-items: center;
-      padding: 70px 0;
+      gap: 45px;
+      padding: 65px 0;
     }
 
     .eyebrow {
@@ -116,7 +116,7 @@
     }
 
     h1 {
-      font: 500 clamp(40px, 6vw, 68px)/1.1 Georgia, serif;
+      font: 500 clamp(40px, 6vw, 66px)/1.1 Georgia, serif;
       margin: 18px 0;
     }
 
@@ -125,7 +125,7 @@
     .lead {
       color: var(--muted);
       line-height: 1.8;
-      max-width: 600px;
+      max-width: 560px;
     }
 
     .actions {
@@ -146,26 +146,26 @@
     .orb {
       width: 120px;
       height: 120px;
-      margin: 40px auto 25px;
+      margin: 35px auto 25px;
       display: grid;
       place-items: center;
       border: 1px solid var(--gold);
       border-radius: 50%;
-      color: var(--gold);
-      font-size: 50px;
       background: radial-gradient(circle, #49618a, #071329);
+      color: var(--gold);
+      font: 52px Georgia, serif;
     }
 
     .showcase h2, .showcase p { text-align: center; }
     .showcase p { color: var(--muted); line-height: 1.7; }
 
-    .auth-section { padding: 15px 0 65px; }
+    .auth-section { padding: 20px 0 65px; }
 
     .auth-card {
-      width: min(100%, 480px);
+      width: min(100%, 470px);
       margin: auto;
       padding: 28px;
-      border: 1px solid var(--gold2);
+      border: 1px solid var(--gold-dark);
       border-radius: 20px;
       background: linear-gradient(145deg, #10264a, #071329);
       box-shadow: 0 20px 60px #0005;
@@ -179,23 +179,22 @@
     .intro {
       color: var(--muted);
       text-align: center;
-      line-height: 1.6;
+      line-height: 1.7;
       font-size: 13px;
-      margin-bottom: 24px;
     }
 
     .tabs {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-bottom: 22px;
+      margin: 22px 0;
     }
 
     .tab {
-      padding: 12px 8px;
-      color: var(--muted);
+      padding: 12px;
       border: 1px solid var(--line);
       border-radius: 8px;
+      color: var(--muted);
       background: transparent;
       cursor: pointer;
     }
@@ -218,25 +217,13 @@
     .field input {
       width: 100%;
       padding: 13px;
-      color: white;
-      background: #07152f;
       border: 1px solid #52627b;
       border-radius: 8px;
-      outline: none;
+      color: white;
+      background: #07152f;
     }
 
-    .field input:focus { border-color: var(--gold); }
-
-    .submit { width: 100%; margin-top: 7px; }
-
-    .note {
-      color: #a9b7ce;
-      text-align: center;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    .note a { color: var(--gold); }
+    .submit { width: 100%; margin-top: 8px; }
 
     #message {
       display: none;
@@ -250,17 +237,14 @@
       overflow-wrap: anywhere;
     }
 
-    .skills {
-      padding: 45px 0 70px;
-    }
+    .section { padding: 45px 0 65px; }
 
     .section-title { text-align: center; margin-bottom: 30px; }
-
     .section-title p { color: var(--muted); }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -268,11 +252,76 @@
       padding: 23px;
       border: 1px solid var(--line);
       border-radius: 15px;
-      background: #ffffff05;
+      background: #ffffff06;
+      min-height: 150px;
     }
 
+    .course .symbol { font-size: 27px; }
     .course h3 { color: var(--gold); }
-    .course p { color: var(--muted); line-height: 1.7; font-size: 13px; }
+    .course p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+    /* Dashboard */
+
+    .dashboard { padding: 30px 0 70px; }
+
+    .dashboard-head {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #16345d, #09162f);
+      margin-bottom: 20px;
+    }
+
+    .dashboard-head h2 {
+      font: 36px Georgia, serif;
+      margin: 12px 0;
+    }
+
+    .dashboard-head p { color: var(--muted); line-height: 1.7; }
+
+    .profile-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .profile-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #ffffff06;
+      min-width: 0;
+    }
+
+    .profile-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 9px;
+    }
+
+    .profile-item strong { overflow-wrap: anywhere; }
+
+    .dashboard-card {
+      display: flex;
+      flex-direction: column;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #ffffff06;
+    }
+
+    .dashboard-card .symbol { font-size: 28px; }
+    .dashboard-card h3 { color: var(--gold); }
+    .dashboard-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .dashboard-card a { color: var(--gold); font-size: 13px; }
 
     footer {
       padding: 25px 0;
@@ -283,14 +332,14 @@
 
     [hidden] { display: none !important; }
 
-    @media(max-width: 760px) {
+    @media (max-width: 760px) {
       nav { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 45px 0; }
-      .grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { grid-template-columns: 1fr; padding: 42px 0; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media(max-width: 500px) {
-      .grid { grid-template-columns: 1fr; }
+    @media (max-width: 520px) {
+      .grid, .profile-strip { grid-template-columns: 1fr; }
       .auth-card { padding: 22px 17px; }
       .brand strong { font-size: 12px; }
       .brand small { font-size: 9px; }
@@ -317,16 +366,16 @@
   </header>
 
   <main>
-    <section class="wrap hero">
+    <section class="wrap hero" id="public-hero">
       <div>
         <div class="eyebrow">Your next chapter starts here</div>
         <h1>Learn a skill.<br><em>Shape your future.</em></h1>
         <p class="lead">
           Explore technology, creativity, business and practical skills.
-          Learn at your own pace and build your future with NOVYRA SKILLS.
+          Learn at your own pace and keep building your future.
         </p>
         <div class="actions">
-          <a class="btn gold" href="#explore">Discover Skills →</a>
+          <a class="btn gold" href="#explore">Explore Skills →</a>
           <a class="btn quiet" href="#account">Create Account</a>
         </div>
       </div>
@@ -342,11 +391,11 @@
     <section class="wrap auth-section" id="account">
       <div class="auth-card">
         <div class="eyebrow" style="text-align:center">Your learning journey</div>
-        <h2 id="heading">Create your account</h2>
-        <p class="intro" id="intro">Join NOVYRA SKILLS and start learning.</p>
+        <h2 id="auth-heading">Create your account</h2>
+        <p class="intro" id="auth-intro">Join NOVYRA SKILLS and start learning.</p>
 
-        <div id="forms-panel">
-          <div class="tabs" id="tabs">
+        <div id="auth-panel">
+          <div class="tabs">
             <button class="tab active" id="signup-tab" type="button">Sign Up</button>
             <button class="tab" id="login-tab" type="button">Login</button>
           </div>
@@ -376,45 +425,21 @@
             </button>
           </form>
 
-          <p class="note" id="forgot-wrap" hidden>
-            <a href="#" id="forgot-link">Forgot password?</a>
+          <p class="intro" style="font-size:11px">
+            Forgot Password is intentionally left for a later update.
           </p>
-
-          <form id="reset-form" hidden>
-            <div class="field">
-              <label for="new-password">New Password</label>
-              <input id="new-password" type="password" minlength="8"
-                     autocomplete="new-password" required
-                     placeholder="At least 8 characters">
-            </div>
-
-            <div class="field">
-              <label for="confirm-password">Confirm New Password</label>
-              <input id="confirm-password" type="password" minlength="8"
-                     autocomplete="new-password" required
-                     placeholder="Enter it again">
-            </div>
-
-            <button class="btn gold submit" id="reset-btn" type="submit">
-              Update Password
-            </button>
-          </form>
-
-          <p class="note">Never share your password with anyone.</p>
         </div>
 
         <div id="signed-in-panel" hidden>
           <p class="intro" id="signed-in-text"></p>
-          <button class="btn quiet submit" id="logout-btn" type="button">
-            Logout
-          </button>
+          <button class="btn quiet submit" id="logout-btn" type="button">Logout</button>
         </div>
 
         <div id="message" role="status" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="wrap skills" id="explore">
+    <section class="wrap section" id="explore">
       <div class="section-title">
         <div class="eyebrow">Explore your potential</div>
         <h2>Where will curiosity take you?</h2>
@@ -423,30 +448,105 @@
 
       <div class="grid">
         <article class="course">
+          <div class="symbol">✧</div>
           <h3>AI & Technology</h3>
           <p>Explore artificial intelligence, coding and digital tools.</p>
         </article>
         <article class="course">
+          <div class="symbol">✎</div>
           <h3>Creative Skills</h3>
           <p>Learn design, art, music and storytelling.</p>
         </article>
         <article class="course">
+          <div class="symbol">◇</div>
           <h3>Business & Finance</h3>
           <p>Discover entrepreneurship, accounting and financial literacy.</p>
         </article>
         <article class="course">
+          <div class="symbol">⚙</div>
           <h3>Technical Skills</h3>
           <p>Explore practical trades and technical learning.</p>
         </article>
         <article class="course">
+          <div class="symbol">⌘</div>
           <h3>Science & Agriculture</h3>
           <p>Develop scientific thinking and explore experiments.</p>
         </article>
         <article class="course">
+          <div class="symbol">◎</div>
           <h3>Communication</h3>
           <p>Strengthen languages, communication and personal growth.</p>
         </article>
       </div>
+    </section>
+
+    <section class="wrap dashboard" id="user-dashboard" hidden>
+      <div class="dashboard-head">
+        <div class="eyebrow">Your personal learning space</div>
+        <h2>Welcome, <span id="dashboard-name">Learner</span>.</h2>
+        <p>Your NOVYRA SKILLS dashboard is ready. Choose a learning area to begin.</p>
+      </div>
+
+      <div class="profile-strip">
+        <div class="profile-item">
+          <span>PROFILE NAME</span>
+          <strong id="dashboard-profile-name">Not set</strong>
+        </div>
+        <div class="profile-item">
+          <span>REGISTERED EMAIL</span>
+          <strong id="dashboard-email">Not available</strong>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <div class="eyebrow">Learning dashboard</div>
+        <h2>Choose your next skill</h2>
+        <p>Your learning journey starts with one small step.</p>
+      </div>
+
+      <div class="grid">
+        <article class="dashboard-card">
+          <div class="symbol">✧</div>
+          <h3>AI & Technology</h3>
+          <p>Discover AI tools, programming, web development and digital skills.</p>
+          <a href="#explore">Explore category →</a>
+        </article>
+        <article class="dashboard-card">
+          <div class="symbol">✎</div>
+          <h3>Art & Design</h3>
+          <p>Build creative skills through design, drawing and visual projects.</p>
+          <a href="#explore">Explore category →</a>
+        </article>
+        <article class="dashboard-card">
+          <div class="symbol">♫</div>
+          <h3>Music</h3>
+          <p>Explore vocal training, instruments, rhythm and music theory.</p>
+          <a href="#explore">Explore category →</a>
+        </article>
+        <article class="dashboard-card">
+          <div class="symbol">◇</div>
+          <h3>Business & Finance</h3>
+          <p>Learn accounting, financial literacy and business fundamentals.</p>
+          <a href="#explore">Explore category →</a>
+        </article>
+        <article class="dashboard-card">
+          <div class="symbol">⚙</div>
+          <h3>Technical Skills</h3>
+          <p>Explore engineering concepts, technical trades and practical learning.</p>
+          <a href="#explore">Explore category →</a>
+        </article>
+        <article class="dashboard-card">
+          <div class="symbol">◎</div>
+          <h3>Languages & Communication</h3>
+          <p>Improve language ability, communication and presentation skills.</p>
+          <a href="#explore">Explore category →</a>
+        </article>
+      </div>
+
+      <p class="intro">
+        This is the first dashboard version. Course links and progress tracking
+        can be connected in later steps.
+      </p>
     </section>
   </main>
 
@@ -470,30 +570,28 @@
     const $ = (id) => document.getElementById(id);
 
     const authForm = $("auth-form");
-    const nameField = $("name-field");
     const nameInput = $("full-name");
     const emailInput = $("email");
     const passwordInput = $("password");
-    const submitBtn = $("submit-btn");
+    const nameField = $("name-field");
     const signupTab = $("signup-tab");
     const loginTab = $("login-tab");
-    const heading = $("heading");
-    const intro = $("intro");
-    const formsPanel = $("forms-panel");
+    const submitBtn = $("submit-btn");
+    const authPanel = $("auth-panel");
     const signedInPanel = $("signed-in-panel");
+    const dashboard = $("user-dashboard");
+    const publicHero = $("public-hero");
+    const explore = $("explore");
     const messageBox = $("message");
-    const forgotWrap = $("forgot-wrap");
-    const resetForm = $("reset-form");
 
     let mode = "signup";
-    let recoveryMode = false;
     let busy = false;
 
-    function showMessage(message, error = false) {
+    function showMessage(message, isError = false) {
       messageBox.textContent = message;
       messageBox.style.display = "block";
-      messageBox.style.borderColor = error ? "#e58b8b" : "var(--gold2)";
-      messageBox.style.color = error ? "#ffc4c4" : "var(--muted)";
+      messageBox.style.borderColor = isError ? "#e58b8b" : "var(--gold-dark)";
+      messageBox.style.color = isError ? "#ffc4c4" : "var(--muted)";
     }
 
     function clearMessage() {
@@ -505,23 +603,23 @@
       mode = nextMode;
       clearMessage();
 
-      const signup = mode === "signup";
-      nameField.hidden = !signup;
-      nameInput.required = signup;
-      passwordInput.autocomplete = signup ? "new-password" : "current-password";
+      const isSignup = mode === "signup";
+      nameField.hidden = !isSignup;
+      nameInput.required = isSignup;
+      passwordInput.autocomplete = isSignup ? "new-password" : "current-password";
 
-      signupTab.classList.toggle("active", signup);
-      loginTab.classList.toggle("active", !signup);
-      heading.textContent = signup ? "Create your account" : "Welcome back";
-      intro.textContent = signup
-        ? "Join NOVYRA SKILLS and start learning."
-        : "Log in to continue your learning journey.";
-      submitBtn.textContent = signup ? "Create Account" : "Login";
+      signupTab.classList.toggle("active", isSignup);
+      loginTab.classList.toggle("active", !isSignup);
 
-      authForm.hidden = false;
-      resetForm.hidden = true;
-      forgotWrap.hidden = signup;
-      $("tabs").hidden = false;
+      $("auth-heading").textContent =
+        isSignup ? "Create your account" : "Welcome back";
+
+      $("auth-intro").textContent =
+        isSignup
+          ? "Join NOVYRA SKILLS and start learning."
+          : "Log in to continue your learning journey.";
+
+      submitBtn.textContent = isSignup ? "Create Account" : "Login";
     }
 
     signupTab.addEventListener("click", () => setMode("signup"));
@@ -549,109 +647,36 @@
     }
 
     function showSignedIn(user) {
-      formsPanel.hidden = true;
+      authPanel.hidden = true;
       signedInPanel.hidden = false;
-      heading.textContent = "You're signed in";
-      intro.textContent = "Welcome to NOVYRA SKILLS.";
+      dashboard.hidden = false;
+      publicHero.hidden = true;
+      explore.hidden = true;
+
+      const metadataName =
+        user.user_metadata?.full_name ||
+        user.user_metadata?.name;
+
+      const displayName = metadataName || user.email || "Learner";
+
+      $("auth-heading").textContent = "You're signed in";
+      $("auth-intro").textContent = "Welcome to NOVYRA SKILLS.";
+
       $("signed-in-text").textContent =
-        "Welcome, " + (
-          user.user_metadata?.full_name || user.email || "Learner"
-        ) + "! Your account is signed in.";
+        "Welcome, " + displayName + "! Your account is signed in.";
+
+      $("dashboard-name").textContent = displayName;
+      $("dashboard-profile-name").textContent = metadataName || "Name not set";
+      $("dashboard-email").textContent = user.email || "Not available";
     }
 
     function showSignedOut() {
-      formsPanel.hidden = false;
+      authPanel.hidden = false;
       signedInPanel.hidden = true;
+      dashboard.hidden = true;
+      publicHero.hidden = false;
+      explore.hidden = false;
       setMode("signup");
-    }
-
-    $("forgot-link").addEventListener("click", async (event) => {
-      event.preventDefault();
-      clearMessage();
-
-      const email = emailInput.value.trim();
-
-      if (!email) {
-        showMessage("Enter your account email first, then click Forgot password.", true);
-        emailInput.focus();
-        return;
-      }
-
-      try {
-        const redirectTo = window.location.origin + window.location.pathname;
-        const { error } = await supabaseClient.auth.resetPasswordForEmail(
-          email,
-          { redirectTo }
-        );
-
-        if (error) throw error;
-
-        showMessage(
-          "If this email has an account, a reset link has been sent. Check your Inbox and Spam folder."
-        );
-      } catch (error) {
-        showMessage(error.message || "Could not send the reset email.", true);
-      }
-    });
-
-    resetForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const newPassword = $("new-password").value;
-      const confirmPassword = $("confirm-password").value;
-
-      if (newPassword.length < 8) {
-        showMessage("Password must contain at least 8 characters.", true);
-        return;
-      }
-
-      if (newPassword !== confirmPassword) {
-        showMessage("Passwords do not match.", true);
-        return;
-      }
-
-      const resetBtn = $("reset-btn");
-      resetBtn.disabled = true;
-
-      try {
-        const { error } = await supabaseClient.auth.updateUser({
-          password: newPassword
-        });
-
-        if (error) throw error;
-
-        recoveryMode = false;
-        resetForm.hidden = true;
-        authForm.hidden = false;
-        $("tabs").hidden = false;
-        forgotWrap.hidden = true;
-        setMode("login");
-        showMessage("Password updated. Log in using your new password.");
-
-        $("new-password").value = "";
-        $("confirm-password").value = "";
-        await supabaseClient.auth.signOut();
-      } catch (error) {
-        showMessage(
-          error.message || "Password update failed. Open the latest reset email link and try again.",
-          true
-        );
-      } finally {
-        resetBtn.disabled = false;
-      }
-    });
-
-    function showPasswordResetForm() {
-      recoveryMode = true;
-      formsPanel.hidden = false;
-      signedInPanel.hidden = true;
-      authForm.hidden = true;
-      resetForm.hidden = false;
-      forgotWrap.hidden = true;
-      $("tabs").hidden = true;
-      heading.textContent = "Reset your password";
-      intro.textContent = "Choose a new password for your account.";
-      clearMessage();
     }
 
     authForm.addEventListener("submit", async (event) => {
@@ -664,13 +689,13 @@
       const password = passwordInput.value;
       const fullName = nameInput.value.trim();
 
-      if (password.length < 8) {
-        showMessage("Password must contain at least 8 characters.", true);
+      if (mode === "signup" && fullName.length < 2) {
+        showMessage("Please enter your full name.", true);
         return;
       }
 
-      if (mode === "signup" && fullName.length < 2) {
-        showMessage("Enter your full name.", true);
+      if (password.length < 8) {
+        showMessage("Password must contain at least 8 characters.", true);
         return;
       }
 
@@ -697,10 +722,10 @@
           if (data.session && data.user) {
             await saveProfile(data.user);
             showSignedIn(data.user);
-            showMessage("Account created and profile saved.");
+            showMessage("Account created and profile saved successfully.");
           } else {
             showMessage(
-              "Account created. Check your email and confirm your account, then return and log in."
+              "Account created. Check your email and confirm your account. Then return here and log in."
             );
           }
         } else {
@@ -711,10 +736,10 @@
 
           await saveProfile(data.user);
           showSignedIn(data.user);
-          showMessage("Login successful. Profile saved.");
+          showMessage("Login successful. Your profile has been saved.");
         }
       } catch (error) {
-        let message = error.message || "Something went wrong. Try again.";
+        let message = error?.message || "Something went wrong. Please try again.";
 
         if (/invalid login credentials/i.test(message)) {
           message = "Email or password is incorrect.";
@@ -733,50 +758,52 @@
     });
 
     $("logout-btn").addEventListener("click", async () => {
-      const { error } = await supabaseClient.auth.signOut();
+      const button = $("logout-btn");
+      button.disabled = true;
+      clearMessage();
 
-      if (error) {
-        showMessage(error.message || "Logout failed.", true);
-        return;
-      }
+      try {
+        const { error } = await supabaseClient.auth.signOut();
+        if (error) throw error;
 
-      showSignedOut();
-      showMessage("You have been logged out.");
-    });
-
-    supabaseClient.auth.onAuthStateChange((event, session) => {
-      if (event === "PASSWORD_RECOVERY") {
-        showPasswordResetForm();
-      } else if (event === "SIGNED_IN" && session?.user && !recoveryMode) {
-        showSignedIn(session.user);
-      } else if (event === "SIGNED_OUT" && !recoveryMode) {
         showSignedOut();
+        showMessage("You have been logged out.");
+      } catch (error) {
+        showMessage(error?.message || "Logout failed. Try again.", true);
+      } finally {
+        button.disabled = false;
       }
     });
 
     (async () => {
-      const { data, error } = await supabaseClient.auth.getSession();
+      try {
+        const { data, error } = await supabaseClient.auth.getSession();
+        if (error) throw error;
 
-      if (error) {
-        showMessage("Could not check your session. Refresh the page.", true);
-        return;
-      }
+        if (data.session?.user) {
+          showSignedIn(data.session.user);
 
-      if (data.session?.user) {
-        showSignedIn(data.session.user);
-
-        try {
-          await saveProfile(data.session.user);
-        } catch (error) {
-          showMessage(
-            "Signed in, but profile could not be saved. Check the profiles table column names and RLS policies.",
-            true
-          );
+          try {
+            await saveProfile(data.session.user);
+          } catch (profileError) {
+            showMessage(
+              "Signed in, but profile could not be saved. Check the profiles table and RLS policies.",
+              true
+            );
+          }
         }
-      } else if (window.location.hash.includes("type=recovery")) {
-        showPasswordResetForm();
+      } catch (error) {
+        showMessage("Could not check your session. Refresh the page.", true);
       }
     })();
+
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN" && session?.user) {
+        showSignedIn(session.user);
+      } else if (event === "SIGNED_OUT") {
+        showSignedOut();
+      }
+    });
   </script>
 </body>
 </html>
